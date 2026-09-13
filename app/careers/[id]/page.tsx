@@ -8,6 +8,7 @@ import { ArrowLeft, MapPin, Briefcase, Building2, DollarSign } from "lucide-reac
 // export const revalidate = 60; // revalidate this page at most once every 60 seconds
 export const dynamic = "force-dynamic";
 
+
 export default async function JobDetailPage({
   params,
 }: {
