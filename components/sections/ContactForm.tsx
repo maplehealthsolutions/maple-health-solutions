@@ -17,7 +17,7 @@ const initialState: ContactFormState = {
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" size="lg" className="w-full" disabled={pending}>
+    <Button type="submit" size="lg" className="w-full" disabled={pending} suppressHydrationWarning>
       {pending ? "Sending…" : "Send Message"}
     </Button>
   );
@@ -46,6 +46,7 @@ export default function ContactForm() {
         autoComplete="off"
         aria-hidden="true"
         className="absolute -left-[9999px] opacity-0 h-0 w-0 overflow-hidden"
+        suppressHydrationWarning
       />
 
       {state.status === "error" && !state.errors && (
@@ -67,6 +68,7 @@ export default function ContactForm() {
           required
           aria-invalid={!!state.errors?.name}
           aria-describedby={state.errors?.name ? "name-error" : undefined}
+          suppressHydrationWarning
         />
         {state.errors?.name && (
           <p id="name-error" className="text-xs text-terra mt-1">
@@ -88,6 +90,7 @@ export default function ContactForm() {
           required
           aria-invalid={!!state.errors?.email}
           aria-describedby={state.errors?.email ? "email-error" : undefined}
+          suppressHydrationWarning
         />
         {state.errors?.email && (
           <p id="email-error" className="text-xs text-terra mt-1">
@@ -109,6 +112,7 @@ export default function ContactForm() {
           required
           aria-invalid={!!state.errors?.phone}
           aria-describedby={state.errors?.phone ? "phone-error" : undefined}
+          suppressHydrationWarning
         />
         {state.errors?.phone && (
           <p id="phone-error" className="text-xs text-terra mt-1">
@@ -129,6 +133,7 @@ export default function ContactForm() {
           required
           aria-invalid={!!state.errors?.message}
           aria-describedby={state.errors?.message ? "message-error" : undefined}
+          suppressHydrationWarning
         />
         {state.errors?.message && (
           <p id="message-error" className="text-xs text-terra mt-1">
