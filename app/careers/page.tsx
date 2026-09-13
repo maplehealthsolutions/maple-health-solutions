@@ -5,6 +5,7 @@ import { Briefcase } from "lucide-react";
 export const revalidate = 60; // revalidate this page at most once every 60 seconds
 // export const dynamic = "force-dynamic";
 
+
 export const metadata = {
   title: "Careers — Maple Health Solutions",
   description:
